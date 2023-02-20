@@ -1,0 +1,89 @@
+# -------------------------------------------------------------------------------------------
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>       GIT_GUIDELINE       <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+# -------------------------------------------------------------------------------------------
+
+# Resources:
+	01. Curse: https://www.udemy.com/course/git-started-with-github/learn/lecture/2965897#overview
+	02. Github repo created for this course: https://github.com/Anthonyfergon/github_demo
+
+# -------------------------------------------------------------------------------------------
+
+# Open Git app
+
+# Getting a repository
+cd C:\Git\Git_Udemy						## create repo
+git init								## intialize repo
+
+# Create the Project_Working_Directory
+mkdir project                           ## create dir
+cd projects/							## create project
+dir										## display creation
+pwd										## fix root dir
+
+# Consult Git Version
+git version
+
+# User Config
+git config --global user.name "Rabbit Lincoln"						## create user
+git config --global user.mail "anthonyfergon28@gmail.com"			## create user's mail
+git config --global --list											## display creation
+	# terminal_result: {
+							$ git config --global --list
+							filter.lfs.clean=git-lfs clean -- %f
+							filter.lfs.smudge=git-lfs smudge -- %f
+							filter.lfs.process=git-lfs filter-process
+							filter.lfs.required=true
+							user.name=Rabbit Lincoln
+							user.email=anthonyfergon28@gmail.com
+							user.mail=anthonyfergon28@gmail.com
+							gui.recentrepo=C:/afernandezgo
+						}
+						
+# Cloning the Repo
+git clone https://github.com/Anthonyfergon/github_demo.git			## clone repo (goto Github: Code/HTTPS/<copy>
+	# terminal_result: {
+							$ git clone https://github.com/Anthonyfergon/github_demo.git
+							Cloning into 'github_demo'...
+							remote: Enumerating objects: 3, done.
+							remote: Counting objects: 100% (3/3), done.
+							remote: Compressing objects: 100% (2/2), done.
+							remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+							Receiving objects: 100% (3/3), done.
+						}
+
+# Access the Repo
+cd github_demo
+ls						## verify content
+git status				## Checking the Repo Status
+
+# Create your first Project Document
+echo "Test Quick Start demo" >> start.txt			## echo (creates:function), "xyz" (name using quotation marks), >> (mandatory), doc_name
+ls													## verify creation
+cat start.txt										## displays the content within the Repo
+git status											## verify the status of the doc within the git_workflow (base on the following information provided by the terminal, the current doc is located under an unstage status within the Git_Workflow_Schema (check visual here: C:\Users\Asus VivoBook\Dropbox\My PC (DESKTOP-GN5CQHE)\Desktop\Documentos\The Vault\Git)
+	# terminal_result: {
+							On branch main
+							Your branch is up to date with 'origin/main'.
+
+							Untracked files:
+							  (use "git add <file>..." to include in what will be committed)
+									start.txt
+
+							nothing added to commit but untracked files present (use "git add" to track)
+						}
+						
+
+git add start.txt									## add the file from the Unstaging_Area  toward the Staging_Area
+git status											## verify the up-to-date Doc status
+	# terminal_result: {
+							$ git status
+							On branch main
+							Your branch is up to date with 'origin/main'.
+
+							Changes to be committed:
+							  (use "git restore --staged <file>..." to unstage)
+									new file:   start.txt
+						}
+
+git commit -m "Adding start text file"				## add the file from the Staging_Area towards the Github_Repository
+git status											## verify the up-to-date Doc status
